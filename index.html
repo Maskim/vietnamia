@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festival Vietnamia 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #C8281A;
+      --gold: #E8A820;
+      --dark: #1a1206;
+      --text: #2c1f0e;
+      --bg: #faf7f2;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px 72px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(200,40,26,0.35) 0%, transparent 70%);
+    }
+
+    .star {
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 36px;
+      color: var(--gold);
+      opacity: 0.6;
+      letter-spacing: 32px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 10vw, 96px);
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-tagline {
+      font-size: clamp(14px, 2.5vw, 20px);
+      color: rgba(255,255,255,0.75);
+      font-style: italic;
+      margin-top: 16px;
+      margin-bottom: 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hero-meta-item .label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-meta-item .value {
+      font-size: 15px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .divider-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 64px;
+    }
+
+    /* CTA BUTTON */
+    .cta-section {
+      text-align: center;
+      padding: 56px 24px 48px;
+      background: var(--red);
+    }
+
+    .cta-section p {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 48px;
+      border: 2px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Georgia', serif;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: var(--red);
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .about h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-style: italic;
+      color: var(--dark);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    .about p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #4a3520;
+    }
+
+    /* PILLARS */
+    .pillars {
+      background: var(--dark);
+      padding: 72px 24px;
+    }
+
+    .pillars-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pillars-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .pillars-header h2 {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-style: italic;
+      color: #fff;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px;
+    }
+
+    .pillar {
+      background: rgba(255,255,255,0.04);
+      padding: 40px 28px;
+      text-align: center;
+      border-top: 2px solid var(--gold);
+      transition: background 0.2s;
+    }
+
+    .pillar:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .pillar-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .pillar h3 {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .pillar p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    /* SCHEDULE PREVIEW */
+    .schedule {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+
+    .schedule-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .schedule-header h2 {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-style: italic;
+      color: var(--dark);
+    }
+
+    .days {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 600px) {
+      .days { grid-template-columns: 1fr; }
+    }
+
+    .day {
+      border-left: 3px solid var(--red);
+      padding-left: 20px;
+    }
+
+    .day-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+
+    .day h3 {
+      font-size: 20px;
+      font-style: italic;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
+    .day ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .day ul li {
+      font-size: 13px;
+      color: #4a3520;
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .day ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .schedule-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .btn-dark {
+      display: inline-block;
+      padding: 14px 40px;
+      background: var(--dark);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Georgia', serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 2px solid var(--dark);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-dark:hover {
+      background: transparent;
+      color: var(--dark);
+    }
+
+    /* LOCATION */
+    .location {
+      background: #f0ebe3;
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    .location .section-label {
+      margin-bottom: 10px;
+    }
+
+    .location h2 {
+      font-size: clamp(18px, 3vw, 26px);
+      font-style: italic;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .location p {
+      font-size: 14px;
+      color: #6b5238;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="star">✦ ✦ ✦</div>
+    <div class="hero-content">
+      <p class="hero-label">Première édition · 2026</p>
+      <h1>Vietnam<span>ia</span></h1>
+      <p class="hero-tagline">Regarder, Goûter, Vibrer : L'Expérience du Vietnam</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="label">Dates</span>
+          <span class="value">16 &amp; 17 Mai 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Lieu</span>
+          <span class="value">Complexe Sportif Bellegrave, Pessac</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="cta-section">
+    <p>Découvrez le programme complet</p>
+    <a href="/le-programme" class="btn">Voir le programme</a>
+  </section>
+
+  <section class="about">
+    <p class="section-label">À propos du festival</p>
+    <h2>Une invitation au voyage au cœur de l'âme vietnamienne</h2>
+    <p>
+      Porté par un collectif bordelais de passionnés, le Festival Vietnamia est une véritable
+      invitation au voyage. Ce week-end exceptionnel vous plonge au cœur de la richesse du Vietnam,
+      autour d'un événement fondateur&nbsp;: la <strong>Fête de la Fondation du Vovinam Viet Vo Dao</strong>,
+      art martial traditionnel porté par de fortes valeurs de transmission.
+    </p>
+  </section>
+
+  <div class="divider-line"></div>
+
+  <section class="pillars">
+    <div class="pillars-inner">
+      <div class="pillars-header">
+        <p class="section-label" style="color: var(--gold);">Au programme</p>
+        <h2 style="color:#fff;">Deux jours d'expériences</h2>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <span class="pillar-icon">🥋</span>
+          <h3>Arts Martiaux</h3>
+          <p>Compétitions et démonstrations de Vovinam Viet Vo Dao, Kung Fu Binh Dinh et bien d'autres</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🎨</span>
+          <h3>Expositions</h3>
+          <p>Photographie de Dũng Nguyễn, peintures de Huynh Thu — l'âme du Vietnam sur toile et en images</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🍜</span>
+          <h3>Gastronomie</h3>
+          <p>Village vietnamien, food-trucks, marché des saveurs et démonstrations culinaires</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🎭</span>
+          <h3>Spectacles</h3>
+          <p>Grand spectacle multidisciplinaire, musique traditionnelle, danse de la Licorne et défilé</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule">
+    <div class="schedule-header">
+      <p class="section-label">Programme</p>
+      <h2>Deux journées exceptionnelles</h2>
+    </div>
+    <div class="days">
+      <div class="day">
+        <p class="day-label">Jour 1</p>
+        <h3>Samedi 16 Mai</h3>
+        <ul>
+          <li>Compétitions de Vovinam</li>
+          <li>Expositions photo &amp; peinture</li>
+          <li>Ateliers origami &amp; langue vietnamienne</li>
+          <li>Démonstrations culinaires</li>
+          <li>Musique traditionnelle</li>
+          <li>Grand spectacle du soir</li>
+        </ul>
+      </div>
+      <div class="day">
+        <p class="day-label">Jour 2</p>
+        <h3>Dimanche 17 Mai</h3>
+        <ul>
+          <li>Finales des compétitions</li>
+          <li>Cérémonie de l'encens</li>
+          <li>Danse de la Licorne</li>
+          <li>Remise des trophées</li>
+          <li>Marché des saveurs</li>
+          <li>Discours de clôture</li>
+        </ul>
+      </div>
+    </div>
+    <div class="schedule-cta">
+      <a href="/le-programme" class="btn-dark">Programme complet (PDF)</a>
+    </div>
+  </section>
+
+  <section class="location">
+    <p class="section-label">Lieu</p>
+    <h2>Complexe Sportif Bellegrave</h2>
+    <p>13 Av. du Colonel Robert Jacqui, 33600 Pessac</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Festival Vietnamia &nbsp;·&nbsp; <a href="/le-programme">Le Programme</a></p>
+  </footer>
+
+</body>
+</html>

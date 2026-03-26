@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Programme — Festival Vietnamia 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #1a1206;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      background: #1a1206;
+      border-bottom: 1px solid rgba(232,168,32,0.3);
+      flex-shrink: 0;
+    }
+
+    .topbar a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .topbar a:hover { color: #E8A820; }
+
+    .topbar-title {
+      font-size: 14px;
+      font-style: italic;
+      color: #E8A820;
+      letter-spacing: 1px;
+    }
+
+    .pdf-download {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pdf-download:hover { color: #E8A820; }
+
+    .pdf-wrapper {
+      flex: 1;
+      width: 100%;
+      min-height: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <a href="/">&larr; Accueil</a>
+    <span class="topbar-title">Le Programme · Festival Vietnamia 2026</span>
+    <a href="/programmes/programme_vietnamia_2026.pdf" download class="pdf-download">
+      ↓ Télécharger
+    </a>
+  </nav>
+
+  <div class="pdf-wrapper">
+    <iframe
+      src="/programmes/programme_vietnamia_2026.pdf"
+      title="Programme Festival Vietnamia 2026"
+    ></iframe>
+  </div>
+
+</body>
+</html>
