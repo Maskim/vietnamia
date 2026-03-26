@@ -6,6 +6,11 @@
   to = "/programmes/programme_vietnamia_2026.pdf"
   status = 200
 
+[[redirects]]
+  from = "/le-programme-fdf"
+  to = "/programmes/programme_FDF_2026.pdf"
+  status = 200
+
 [[headers]]
   for = "/programmes/*.pdf"
   [headers.values]
