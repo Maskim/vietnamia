@@ -1,6 +1,11 @@
 [build]
   publish = "."
 
+[[redirects]]
+  from = "/le-programme"
+  to = "/programmes/programme_vietnamia_2026.pdf"
+  status = 200
+
 [[headers]]
   for = "/programmes/*.pdf"
   [headers.values]
